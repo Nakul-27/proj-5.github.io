@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+ADD DOCUMENTATION SIGNATURE BLOCK HERE (replacing the "???" below)
+Provide a summary here with details inline, where appropriate
+MY DOCUMENTATION IDENTIFIES ALL SOURCES USED AND ASSISTANCE RECEIVED
+IN COMPLETING THIS ASSIGNMENT. - NAKUL RAO
+
+LU, CALVIN '24 Co: A4. Conversation with CDT. 
+I was having difficulty with getting the map to show up and Calvin showed me that I needed to create a 1:1 map to get it to work.
+His help was integral in figuring out how to get off the ground.
+West Point, NY. 14 FEB 204
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+      <style>
+      .column-container {
+        display: flex;
+      }
+      .text-column {
+        flex: 30%; /* Set text column to take up 30% of the space */
+        padding: 10px;
+      }
+      .maps-column {
+        flex: 70%; /* Set maps column to take up 70% of the space */
+        padding: 10px;
+        display: flex; /* Added to align the two maps horizontally */
+        justify-content: space-between; /* Added to space out the maps */
+      }
+      iframe {
+        width: 80%; /* Reset iframe width to fill their container */
+        height: 800px; /* Adjust height as needed */
+      }
+      @media (max-width: 768px) {
+        .column-container {
+          flex-direction: column;
+        }
+        .text-column, .maps-column {
+          flex: 100%; /* On smaller screens, each column takes full width */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+        <h1>What Cassava-Infecting Geminiviruses Can Tell Us About the Effects of the Scramble for Africa</h1>  
+        <div class="column-container">
+            <div class="text-column" style="max-width: 100%">
+                <div>
+                    Cassava-Infecting Geminiviruses are viruses that ``cause the most economic damage'' to the cassava plant <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6951474/">Chikoti et. al.</a>
+                    Cassava is a major staple food in the developing world - particularly Africa. It provides a basic diet for over half a billion people <a href="https://en.wikipedia.org/wiki/Cassava">Wikipedia</a>.
+                    The evolution of a virus (more strains means more evolutions) indicates ``a noncyclic change in the genetic characteristics of [the] virus'' <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7149781/">Villareal</a>.
+                    While this does not directly indicate (to my knowledge) that a virus is stronger and more resistent, it isn't farfetched to say that the more a virus evolves, there is potential for it to pose a threat to existing crops - in this case the Cassava plant.
+                    <br><br>
+                    The scramble for Africa was a phenomenon in which a few European countries colonized most of Africa and the middle east. This was at the height of their empires.
+                    It is no secret that this has had lasting ramifications on the African continent in all facets of life, from technological development to political instability.
+                    For this project, I'm curious as to the intersection between the scramble for Africa, Cassava-Infecting Geminiviruses and Hospital Infrastructure.
+                    While Cassava-Infecting Geminiviruses cannot cause direct illnesses, I am curious as to how African countries can take care of their people from a medical perspective - because as people go hungry they become more susceptible to illness (as malnutrition compromises the immune system).
+                    <b>Hypothesis: I believe that the African Countries that were colonized by England or France will see the largest amount of cassava virus strains and most negative effect on their hospital infrastructure.</b>
+                </div>
+                <br>
+                <br>
+                <div>
+                    There were two datasets utilized:
+                    <ol>
+                        <li> <a href="https://nextstrain.org/community/pestdisplace/CMDAFRICA?l=radial&p=full&tl=country">Real-time tracking of cassava-infecting geminiviruses in Africa (Nextstrain.org)</a> This was newick tree data and metadata. </li>
+                        <li> <a href="https://apps.who.int/gho/data/node.main-afro.506?lang=en">Global Health Observatory Data Repository (Africa Region) - Health infrastructure Data by Country</a> This was the total density of hospitals per 100,000 people. Some countries were unknown. Tooltips indicate this.</li>
+                    </ol>
+                    Note: The color system for this is based off the <em>colonizing country</em>, not the <em>colonized country</em>, and only few (16 specifically) African countries were plotted because of the constraints of the Nextstrain dataset and desire for continuity.
+                    <br>
+                    The countries that were plotted are: Kenya, Tanzania, Oman, Madagascar, Comoros, Mayotte, Ghana, Zambia, Uganda, Equatorial Guinea, Democratic Republic of Congo, Angola, Central African Republic, Burkina Faso, Malawi, Nigeria, Seychelles.
+                </div>
+                <br>
+                <br>
+                <div>
+                    There are a multitude of things that I wish I could've done with this project; however much of the data wrangling and the plotting of points on the below maps took much longer than anticipated.
+                    Some of the things are being able to toggle the colorscheme between colonizing countries and colonized countries, having tool tips appear for both maps at the same time, and colored arcs on the phylogenetic tree.
+                    <b>Ultimately though, I wanted to be sure to convey the data in a comprehensive and coherent manner that fascilitates a further conversation. Therefore, I opted to prioritize that over the visuals being more robust perhaps. I believe that these visuals do a good job of telling that story and drawing a connection between the Scramble for Africa, Cassava-Infecting Geminiviruses, and Hospital Infrastructure.</b>
+                    <br>
+                    <br>
+                    Also Note: The maps are zoomable via scrolling, so be sure to use the scroll bar if you don't want to change the zoom.
+                </div>
+            </div>
+        </div>
+        <div id="observablehq-color_legend-f21a6258"></div>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+
+        <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/7689eccaf4bf320f@568.js?v=4&api_key=14de444719c3ef7c20d1787ec27bbec436d93ef6";
+        new Runtime().module(define, name => {
+          if (name === "color_legend") return new Inspector(document.querySelector("#observablehq-color_legend-f21a6258"));
+        });
+        </script>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 20px;">
+          <div style="flex: 1; max-width: 50%; box-sizing: border-box;">
+            <h2 style="text-align: center;">Strain Count by Country</h2>
+            <iframe width="120%" height="400" frameborder="0"
+              src="https://observablehq.com/embed/7689eccaf4bf320f@568?cells=AfricaGeo&api_key=14de444719c3ef7c20d1787ec27bbec436d93ef6"></iframe>
+          </div>
+          <div style="flex: 1; max-width: 50%; box-sizing: border-box;">
+            <h2 style="text-align: center;">Hospital Density by Country </h2>
+            <iframe width="120%" height="400" frameborder="0"
+              src="https://observablehq.com/embed/7689eccaf4bf320f@568?cells=AfricaHealthIndex&api_key=14de444719c3ef7c20d1787ec27bbec436d93ef6"></iframe>
+          </div>
+        </div>
+        <iframe width="100%" height="1400" frameborder="0"
+          src="https://observablehq.com/embed/7689eccaf4bf320f@568?cells=viewof+showLength%2Cchart&api_key=14de444719c3ef7c20d1787ec27bbec436d93ef6"></iframe>
+        <p>Credit: <a href="https://observablehq.com/d/f8da430df551a70b@423">Vaccination Maps by nakul-27</a></p>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+        <script type="module">
+
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/f8da430df551a70b@423.js?v=4";
+        new Runtime().module(define, name => {
+          if (name === "viewof year") return new Inspector(document.querySelector("#observablehq-viewof-year-92c9fa14"));
+          if (name === "viewof vaccineType") return new Inspector(document.querySelector("#observablehq-viewof-vaccineType-92c9fa14"));
+          if (name === "hepMap") return new Inspector(document.querySelector("#observablehq-hepMap-92c9fa14"));
+          if (name === "viewof covidTimePeriod") return new Inspector(document.querySelector("#observablehq-viewof-covidTimePeriod-92c9fa14"));
+          if (name === "viewof covidGroupNames") return new Inspector(document.querySelector("#observablehq-viewof-covidGroupNames-92c9fa14"));
+          if (name === "viewof covidGroupSpecifics") return new Inspector(document.querySelector("#observablehq-viewof-covidGroupSpecifics-92c9fa14"));
+          if (name === "covidGeo") return new Inspector(document.querySelector("#observablehq-covidGeo-92c9fa14"));
+          return ["hepatitisVaccineData","hepVaccineMap","timePeriod","covidYear","months","covidMap","uniqueCategories"].includes(name);
+        });
+        </script>
+    </main>
+	<script src="index.js"></script>
+  </body>
+</html>
+
+
